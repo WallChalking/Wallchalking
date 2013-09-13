@@ -8,6 +8,8 @@
     <li>    	
     <%= link_to t(:login), new_user_session_path %>
     </li>
+		<li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
+		<li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
   <% end %>
   <% if user_signed_in? %>
     <li>
