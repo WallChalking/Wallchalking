@@ -221,7 +221,7 @@ Devise.setup do |config|
   # up on your models and hooks.
 #  config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
   config.omniauth :twitter, "f8nOxrXFVEwF4fQUZrloA", "T8B7HlSN4mypCM6wM93VYu02nWHDW2eBMxC1AAF3A"
-  config.omniauth :facebook, '1376798392544998', 'bae4862828b260258c98ad56a5e13ed9'
+  config.omniauth :facebook, '1376798392544998', 'bae4862828b260258c98ad56a5e13ed9', {:scope => 'publish_stream, email'}
   #http://www.orhancanceylan.com/rails-twitter-and-facebook-authentications-with-omniauth-and-devise/
 
   # ==> Warden configuration
