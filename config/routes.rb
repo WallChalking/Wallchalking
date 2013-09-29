@@ -1,4 +1,7 @@
 Wallchalking::Application.routes.draw do
+  resources :facilities
+
+
   authenticated :user do
     root :to => 'home#index'
   end

@@ -6,4 +6,6 @@ en:
   login: "Login"
   logout: "Logout"
   signup: "Sign up"
+  admin_protected: "Admin protected."
+  facilites: "Facilities"
   
