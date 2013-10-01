@@ -1,0 +1,37 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @listing.title
+%p
+  %b Address:
+  = @listing.address
+%p
+  %b Zipcode:
+  = @listing.zipcode
+%p
+  %b City:
+  = @listing.city
+%p
+  %b Country:
+  = @listing.country
+%p
+  %b Description:
+  = @listing.description
+%p
+  %b Beds:
+  = @listing.beds
+%p
+  %b Bathrooms:
+  = @listing.bathrooms
+%p
+  %b Size:
+  = @listing.size
+%p
+  %b Facility:
+  - @listing.facilities.each do |facility|
+    = facility.name
+
+= link_to 'Edit', edit_listing_path(@listing)
+\|
+= link_to 'Back', listings_path

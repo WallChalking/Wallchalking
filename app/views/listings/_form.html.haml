@@ -1,0 +1,22 @@
+= simple_form_for @listing do |f|
+  - if @listing.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@listing.errors.count, "error")} prohibited this listing from being saved:"
+      %ul
+        - @listing.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.input :title
+  = f.input :address
+  = f.input :zipcode
+  = f.input :city
+  = f.input :country
+  = f.input :description
+  = f.input :beds
+  = f.input :bathrooms
+  = f.input :size
+  = f.input :monthly_rent
+  = f.input :deposit_amount
+  = f.association :facilities, :as => :check_boxes
+  .actions
+    = f.submit 'Save'

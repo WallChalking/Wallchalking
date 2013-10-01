@@ -3,5 +3,5 @@ class Facility < ActiveRecord::Base
   
   validates_presence_of :name
   
-  belongs_to :listing
+  has_and_belongs_to_many :listings
 end

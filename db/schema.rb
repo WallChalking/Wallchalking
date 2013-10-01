@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130929200645) do
+ActiveRecord::Schema.define(:version => 20131001204608) do
 
   create_table "authentications", :force => true do |t|
     t.string   "user_id"
@@ -28,6 +28,30 @@ ActiveRecord::Schema.define(:version => 20130929200645) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "facilities_listings", :id => false, :force => true do |t|
+    t.integer "facility_id"
+    t.integer "listing_id"
+  end
+
+  create_table "listings", :force => true do |t|
+    t.string   "title"
+    t.string   "address"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "country"
+    t.text     "description"
+    t.integer  "beds"
+    t.integer  "bathrooms"
+    t.integer  "size"
+    t.integer  "facility_id"
+    t.datetime "created_at",                                                    :null => false
+    t.datetime "updated_at",                                                    :null => false
+    t.decimal  "monthly_rent",   :precision => 8, :scale => 2,                  :null => false
+    t.decimal  "deposit_amount", :precision => 8, :scale => 2, :default => 0.0
+  end
+
+  add_index "listings", ["facility_id"], :name => "index_listings_on_facility_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
