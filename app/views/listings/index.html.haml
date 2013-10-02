@@ -12,6 +12,7 @@
     %th Bathrooms
     %th Size
     %th Facility
+    %th Property Type
     %th
     %th
     %th
@@ -30,6 +31,7 @@
       %td
         - listing.facilities.each do |facility|
           = facility.name
+      %td= listing.property_type.name
       %td= link_to 'Show', listing
       %td= link_to 'Edit', edit_listing_path(listing)
       %td= link_to 'Destroy', listing, :method => :delete, :data => { :confirm => 'Are you sure?' }

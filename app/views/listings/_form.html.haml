@@ -16,6 +16,7 @@
   = f.input :bathrooms
   = f.input :size
   = f.input :monthly_rent
+  = f.association :property_type, :label => "Property Type"
   = f.input :deposit_amount
   = f.association :facilities, :as => :check_boxes
   .actions

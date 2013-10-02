@@ -1,4 +1,7 @@
 Wallchalking::Application.routes.draw do
+  resources :property_types
+
+
   resources :listings
 
 
