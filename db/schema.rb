@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131002200509) do
+ActiveRecord::Schema.define(:version => 20131005124639) do
 
   create_table "authentications", :force => true do |t|
     t.string   "user_id"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20131002200509) do
     t.decimal  "monthly_rent",     :precision => 8, :scale => 2,                  :null => false
     t.decimal  "deposit_amount",   :precision => 8, :scale => 2, :default => 0.0
     t.integer  "property_type_id",                                                :null => false
+    t.datetime "available_from"
   end
 
   add_index "listings", ["facility_id"], :name => "index_listings_on_facility_id"

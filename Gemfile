@@ -25,6 +25,7 @@ gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
 gem 'country_select'
+gem 'bootstrap-datepicker-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

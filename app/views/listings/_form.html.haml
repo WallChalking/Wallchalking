@@ -19,5 +19,10 @@
   = f.association :property_type, :label => "Property Type"
   = f.input :deposit_amount
   = f.association :facilities, :as => :check_boxes
+  %label
+    Available From
+  = f.input_field :available_from, as: :string, :class => "datepicker"
+  .hint
+    Format: "yyyy/mm/dd"
   .actions
     = f.submit 'Save'
