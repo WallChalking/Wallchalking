@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(params[:listing])
-
+    @listing.listing_image.name = "test.jpg"
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }

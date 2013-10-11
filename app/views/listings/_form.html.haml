@@ -22,6 +22,8 @@
   %label
     Available From
   = f.input_field :available_from, as: :string, :class => "datepicker"
+  = file_field(:listing, :listing_images)
+  
   .hint
     Format: "yyyy/mm/dd"
   .actions
