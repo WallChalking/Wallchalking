@@ -24,6 +24,8 @@ gem 'fb_graph'
 gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
+gem 'carrierwave'
+gem "mini_magick"
 gem 'country_select'
 gem 'bootstrap-datepicker-rails'
 group :development do

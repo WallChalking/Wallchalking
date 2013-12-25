@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_filter :authorize_list_owner, :only => [:edit]
+
   # GET /listings
   # GET /listings.json
   def index
@@ -42,7 +44,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(params[:listing])
-    @listing.listing_image.name = "test.jpg"
+#    @listing.listing_image.name = "test.jpg"
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -79,6 +81,13 @@ class ListingsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to listings_url }
       format.json { head :no_content }
+    end
+  end
+
+  def authorize_list_owner
+    @listing = Listing.find(params[:id])
+    unless current_user == @listing.user
+      redirect_to listings_path, :notice => 'Operation not allowed.'
     end
   end
 end

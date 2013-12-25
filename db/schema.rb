@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005175733) do
+ActiveRecord::Schema.define(:version => 20131225124746) do
 
   create_table "authentications", :force => true do |t|
     t.string   "user_id"
@@ -54,12 +54,15 @@ ActiveRecord::Schema.define(:version => 20131005175733) do
     t.integer  "bathrooms"
     t.integer  "size"
     t.integer  "facility_id"
-    t.datetime "created_at",                                                      :null => false
-    t.datetime "updated_at",                                                      :null => false
-    t.decimal  "monthly_rent",     :precision => 8, :scale => 2,                  :null => false
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
+    t.decimal  "monthly_rent",     :precision => 8, :scale => 2,                    :null => false
     t.decimal  "deposit_amount",   :precision => 8, :scale => 2, :default => 0.0
-    t.integer  "property_type_id",                                                :null => false
+    t.integer  "property_type_id",                                                  :null => false
     t.datetime "available_from"
+    t.string   "image"
+    t.boolean  "published",                                      :default => false
+    t.integer  "user_id",                                                           :null => false
   end
 
   add_index "listings", ["facility_id"], :name => "index_listings_on_facility_id"

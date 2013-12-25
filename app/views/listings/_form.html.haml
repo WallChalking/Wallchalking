@@ -21,10 +21,12 @@
   = f.association :facilities, :as => :check_boxes
   %label
     Available From
-  = f.input_field :available_from, as: :string, :class => "datepicker"
-  = file_field(:listing, :listing_images)
-  
+  = f.input_field :available_from, as: :string, :class => 'datepicker'
   .hint
     Format: "yyyy/mm/dd"
+  =# file_field(:listing, :listing_images)
+  = f.input :image, multiple: true
+  
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Review and Publish'

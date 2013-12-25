@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
   has_many :authentications
+  has_many :listings
   
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'], 
