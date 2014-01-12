@@ -6,17 +6,23 @@
         - @listing.errors.full_messages.each do |msg|
           %li= msg
 
+  <!-- div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+  </div -->
   = f.input :title
   = f.input :address
   = f.input :zipcode
-  = f.input :city
-  = f.input :country
+  %div{:class => "ui-widget"}
+    = f.input :city
+  = f.input :country, priority: [ "Austria" ], input_html: {disabled: "disabled"}
   = f.input :description
   = f.input :beds
   = f.input :bathrooms
   = f.input :size
   = f.input :monthly_rent
   = f.association :property_type, :label => "Property Type"
+  = f.input :property_for, as: :select, collection: ["Sale", "Rent"], prompt: "Select property for"
   = f.input :deposit_amount
   = f.association :facilities, :as => :check_boxes
   %label

@@ -35,12 +35,12 @@
 %p
   %b Image:
   = image_tag @listing.image
+- if current_user == @listing.user
+  - unless @listing.published?
+    = simple_form_for @listing do |f|
+      = f.input :published, :as => :hidden, :input_html => {:checked => true, :value => 1 }
+      = f.submit 'Publish', :class => 'btn btn-primary'
 
-- unless @listing.published?
-  = simple_form_for @listing do |f|
-    = f.input :published, :as => :hidden, :input_html => {:checked => true, :value => 1 }
-    = f.submit 'Publish', :class => 'btn btn-primary'
-
-= link_to 'Edit', edit_listing_path(@listing), :class => 'btn btn-primary'
-- if @listing.published
-  = link_to 'Back', listings_path, :class => 'btn btn-primary'
+  = link_to 'Edit', edit_listing_path(@listing), :class => 'btn btn-primary'
+  - if @listing.published
+    = link_to 'Back', listings_path, :class => 'btn btn-primary'

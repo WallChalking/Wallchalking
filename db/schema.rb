@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131225124746) do
+ActiveRecord::Schema.define(:version => 20140111164635) do
 
   create_table "authentications", :force => true do |t|
     t.string   "user_id"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(:version => 20131225124746) do
     t.string   "token_secret"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "facilities", :force => true do |t|
@@ -63,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20131225124746) do
     t.string   "image"
     t.boolean  "published",                                      :default => false
     t.integer  "user_id",                                                           :null => false
+    t.string   "property_for",                                                      :null => false
   end
 
   add_index "listings", ["facility_id"], :name => "index_listings_on_facility_id"
