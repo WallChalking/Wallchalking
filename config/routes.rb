@@ -1,4 +1,6 @@
 Wallchalking::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :property_types
   resources :listings
   resources :facilities

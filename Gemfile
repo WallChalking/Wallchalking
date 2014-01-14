@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'country_select'
+gem 'rails_admin'
 gem 'bootstrap-datepicker-rails'
 group :development do
   gem 'better_errors'
