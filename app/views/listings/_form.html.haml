@@ -19,10 +19,11 @@
   = f.input :description
   = f.input :beds
   = f.input :bathrooms
-  = f.input :size
-  = f.input :monthly_rent
+  = f.input :size  
   = f.association :property_type, :label => "Property Type"
   = f.input :property_for, as: :select, collection: ["Sale", "Rent"], prompt: "Select property for"
+  %span.hidden_field
+    = f.input :monthly_rent
   = f.input :deposit_amount
   = f.association :facilities, :as => :check_boxes
   %label

@@ -44,6 +44,8 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(params[:listing])
+    @listing.user_id = current_user.id
+    @listing.country = "Austria"
 #    @listing.listing_image.name = "test.jpg"
     respond_to do |format|
       if @listing.save

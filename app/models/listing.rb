@@ -9,7 +9,11 @@ class Listing < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :title, :address, :zipcode, :city, :size, :property_for
-
-  
+   
   mount_uploader :image, ListingImageUploader
+
+  #Scopes
+  scope :by_city, ->(city_name) {where(:city => city_name)}
+  
+  
 end

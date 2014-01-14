@@ -1,0 +1,11 @@
+= simple_form_for :search, :html => {:id => "search_form"}, :url => "/search" do |f|
+  %div{:class => "ui-widget"}
+    = f.input :city, :id => "listing_city", :label => false, :placeholder => 'City ...', required: true
+  = f.input :beds, :label => false, :placeholder => 'Beds'
+  = f.input :baths, :label => false, :placeholder => 'Baths'
+  = f.input :min, :label => false, :placeholder => 'Min'
+  = f.input :max, :label => false, :placeholder => 'Max'
+  = f.input :size, :label => false, :placeholder => 'Size'
+  = f.input :property_type, collection: PropertyType.all, :prompt => "Property Type...", :label => false, :placeholder => 'Property type'  
+
+  = f.submit "Search"
