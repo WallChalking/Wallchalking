@@ -11,5 +11,5 @@ $(document).ready ->
     if $("#listing_property_for").val() is "Rent"
       $("label[for='listing_monthly_rent']").text("Monthly Rent")
     $(".hidden_field").show()
-  
+    
 

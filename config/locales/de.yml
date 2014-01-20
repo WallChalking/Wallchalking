@@ -2,7 +2,22 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
+  home:
+    index:
+      city: "Ceety"
+  search:
+    search_form:
+      city: "Stadt"
+      beds: "Betten"
+      baths: "Bad"
+      min: "Min"
+      max: "Max"
+      size: "Größe"
+      property_type: "Art der Immobilie"
+      search: "Suche"
   hello: "Hello world"
   login: "Anmelden"
   logout: "Abmelden"
+  edit_account: "Konto bearbeiten"
   signup: "Registrieren"
+  currency_unit: "&euro;"

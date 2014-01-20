@@ -1,0 +1,24 @@
+%p
+  = link_to listing_path(listing_item) do
+    = image_tag listing_item.image, :width => "245", :height => "165"
+%p
+  = listing_item.title
+%p
+  = pluralize(listing_item.beds, "Bed")
+  
+%p
+  = pluralize(listing_item.bathrooms, "Bath")
+  
+%p
+  = listing_item.property_type.name
+  
+%p
+  #{listing_item.size} sqft
+
+%p
+  #{listing_item.city}, #{listing_item.country}
+  
+%p
+  = (listing_item.property_for == "Sale") ? number_to_currency(listing_item.monthly_rent, :unit => t(:currency_unit), :precision => 0) : number_to_currency(listing_item.monthly_rent, :unit => t(:currency_unit), :precision => 0)+"/mo"
+  
+%hr

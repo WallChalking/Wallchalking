@@ -2,6 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  search:
+    search_form:
+      city: "City"
+      beds: "Beds"
+      baths: "Baths"
+      min: "Min"
+      max: "Max"
+      size: "Size (sqft)"
+      property_type: "Property type"
+      search: "Search"
   hello: "Hello world"
   login: "Login"
   logout: "Logout"
@@ -9,4 +19,5 @@ en:
   admin_protected: "Admin protected."
   facilites: "Facilities"
   property_types: "Property Types"
+  currency_unit: "&euro;"
   

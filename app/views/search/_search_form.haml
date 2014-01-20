@@ -1,11 +1,21 @@
-= simple_form_for :search, :html => {:id => "search_form"}, :url => "/search" do |f|
-  %div{:class => "ui-widget"}
-    = f.input :city, :id => "listing_city", :label => false, :placeholder => 'City ...', required: true
-  = f.input :beds, :label => false, :placeholder => 'Beds'
-  = f.input :baths, :label => false, :placeholder => 'Baths'
-  = f.input :min, :label => false, :placeholder => 'Min'
-  = f.input :max, :label => false, :placeholder => 'Max'
-  = f.input :size, :label => false, :placeholder => 'Size'
-  = f.input :property_type, collection: PropertyType.all, :prompt => "Property Type...", :label => false, :placeholder => 'Property type'  
+%ul.nav.nav-pills
+  %li#Sale.active.property_for
+    %a{href: "#"} For Sale
+  %li#Rent.property_for
+    %a{href: "#"} For Rent
 
-  = f.submit "Search"
+.alert.alert-danger.error{:style => "display:none;"}
+  City name is required.
+
+= simple_form_for :search, :html => {:id => "search_form"}, :url => search_path() do |f|
+  %div{:class => "ui-widget"}
+    = f.input :city, :id => "listing_city", :label => false, :placeholder => "#{t '.city'} ...", required: true
+  = f.input :beds, :label => false, :placeholder => "#{t '.beds'}"
+  = f.input :baths, :label => false, :placeholder => "#{t '.baths'}"
+  = f.input :min, :label => false, :placeholder => "#{t '.min'}"
+  = f.input :max, :label => false, :placeholder => "#{t '.max'}"
+  = f.input :size, :label => false, :placeholder => "#{t '.size'}"
+  = f.input :property_type, collection: PropertyType.all, :prompt => "#{t '.property_type'}...", :label => false, :placeholder => 'Property type'
+  = f.input :property_for, :label => false, :as => :hidden, input_html: {:value => "Sale"}
+
+  = f.submit "#{t '.search'}", :id => "search"

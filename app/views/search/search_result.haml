@@ -1,1 +1,9 @@
-%h2 Search Results
+= render "search/search_form"
+
+- if @listings.count > 0
+  - @listings.each do |listing|
+    = render partial: "search_result_item", :locals => { :listing_item => listing }
+  = paginate @listings
+- else  
+  .alert.alert-danger
+    No record found.
