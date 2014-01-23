@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   before_filter :authorize_list_owner, :only => [:edit]
+  
+  impressionist :actions=>[:show]
 
   # GET /listings
   # GET /listings.json

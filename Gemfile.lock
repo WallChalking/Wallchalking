@@ -120,6 +120,9 @@ GEM
     httpauth (0.2.0)
     httpclient (2.3.0.1)
     i18n (0.6.1)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -308,6 +311,7 @@ DEPENDENCIES
   fb_graph
   figaro
   haml-rails
+  impressionist
   jquery-rails
   launchy
   mini_magick
