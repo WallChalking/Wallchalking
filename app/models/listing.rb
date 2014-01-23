@@ -11,6 +11,7 @@ class Listing < ActiveRecord::Base
   validates_presence_of :title, :address, :zipcode, :city, :size, :property_for
    
   mount_uploader :image, ListingImageUploader
+  is_impressionable
 
   #Scopes
   scope :by_city, ->(city_name) {where(:city => city_name)}

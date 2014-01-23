@@ -28,6 +28,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'country_select'
 gem 'rails_admin'
+gem 'impressionist'
 gem 'bootstrap-datepicker-rails'
 group :development do
   gem 'better_errors'
