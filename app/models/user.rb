@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   
   has_many :authentications
   has_many :listings
+  has_many :saved_listings
+  
+  # Voter
+  acts_as_voter
   
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'], 

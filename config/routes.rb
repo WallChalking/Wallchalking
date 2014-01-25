@@ -12,6 +12,16 @@ Wallchalking::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
   resources :users
 
-  match 'search' => 'search#search_result'
+  resources :listings do
+    collection do
+      post 'like'
+      post 'unlike'
+      post 'save'
+      post 'unsave'
+    end  
+  end
 
+  
+  match 'search' => 'search#search_result'
+  
 end

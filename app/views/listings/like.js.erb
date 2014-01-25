@@ -1,0 +1,2 @@
+$(".loader").hide('slow');
+$(".like-link a").removeClass('like').addClass('unlike').text('Unlike').attr("href", "<%= unlike_listings_path(:id => @listing.id) %>");

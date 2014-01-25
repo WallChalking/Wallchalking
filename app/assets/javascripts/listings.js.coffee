@@ -12,4 +12,7 @@ $(document).ready ->
       $("label[for='listing_monthly_rent']").text("Monthly Rent")
     $(".hidden_field").show()
     
+  $(".like").click ->
+    $(".loader").html("...")
+    
 

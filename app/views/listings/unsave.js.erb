@@ -1,0 +1,2 @@
+$(".loader").hide('slow');
+$(".save-link a").removeClass('unsave').addClass('save').text('Save').attr("href", "<%= save_listings_path(:id => @listing.id) %>");

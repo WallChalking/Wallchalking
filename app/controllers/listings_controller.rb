@@ -18,7 +18,7 @@ class ListingsController < ApplicationController
   # GET /listings/1.json
   def show
     @listing = Listing.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @listing }
@@ -94,4 +94,39 @@ class ListingsController < ApplicationController
       redirect_to listings_path, :notice => 'Operation not allowed.'
     end
   end
+  
+  def like    
+    @listing = Listing.find(params[:id])
+    @listing.liked_by current_user
+    respond_to do |format|
+      format.js
+    end      
+  end
+  
+  def unlike    
+    @listing = Listing.find(params[:id])
+    @listing.unliked_by current_user
+    respond_to do |format|
+      format.js
+    end      
+  end
+  
+  def save
+    @listing = Listing.find(params[:id])
+    @listing.add_to_saved_listings(current_user.id)
+    
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  def unsave
+    @listing = Listing.find(params[:id])
+    @listing.remove_from_saved_listings(current_user.id)
+    
+    respond_to do |format|
+      format.js
+    end
+  end
+
 end
