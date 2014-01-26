@@ -4,6 +4,7 @@ Wallchalking::Application.routes.draw do
   resources :property_types
   resources :listings
   resources :facilities
+  resources :reviews
 
   authenticated :user do
     root :to => 'home#index'

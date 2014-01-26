@@ -14,5 +14,16 @@ $(document).ready ->
     
   $(".like").click ->
     $(".loader").html("...")
+  
+  
+  $('#star').raty({ 
+    path: '/assets' ,
+    width: 200,
+    starOff  : 'star-off-big.png',
+    starOn   : 'star-on-big.png',
+    click: (score, evt) ->
+      $("#review_rating").val(score)      
+  
+  })
     
 

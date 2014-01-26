@@ -1,13 +1,14 @@
 .loader
-%p
-  .save-link
-    - if @listing.saved?(current_user.id)    
-      = link_to "Unsave", unsave_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'unsave'
-    - else
-      = link_to "Save", save_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'save'
-%p
-  .like-link
-    - if current_user.voted_for? @listing    
-      = link_to "Unlike", unlike_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'unlike'
-    - else    
-      = link_to "Like", like_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'like'
+- if user_signed_in?
+  %p
+    .save-link
+      - if @listing.saved?(current_user.id)    
+        = link_to "Unsave", unsave_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'unsave'
+      - else
+        = link_to "Save", save_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'save'
+  %p
+    .like-link
+      - if current_user.voted_for? @listing    
+        = link_to "Unlike", unlike_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'unlike'
+      - else    
+        = link_to "Like", like_listings_path(:id => @listing.id), :remote => true, :method => :post, :class => 'like'
