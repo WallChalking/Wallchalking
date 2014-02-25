@@ -1,7 +1,7 @@
 = simple_form_for @review, :remote => true do |f|
   .review-msg
   #star
-  = f.input :review, :as => :string
+  = f.input :description, :as => :string
   = f.input :listing_id, :as => :hidden, input_html: {:value => listing_id}
   = f.input :rating, :as => :hidden
   = f.submit 'Post'

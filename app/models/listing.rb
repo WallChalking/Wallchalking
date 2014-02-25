@@ -17,6 +17,7 @@ class Listing < ActiveRecord::Base
 
   #Scopes
   scope :by_city, ->(city_name) {where(:city => city_name)}
+  scope :published, -> {where(:published => true)}
   
   
   def add_to_saved_listings(user_id)

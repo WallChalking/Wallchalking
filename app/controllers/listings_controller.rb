@@ -19,6 +19,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @review = Review.new
+    @reviews = Review.where(:listing_id => params[:id])
     
     respond_to do |format|
       format.html # show.html.erb

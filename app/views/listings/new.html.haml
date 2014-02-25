@@ -12,16 +12,16 @@
       add = $("#listing_address").val();
       codeAddress($("#listing_address").val());
     });
-    
+    /*
     $("#listing_zipcode").focusout(function(){
       add = $("#listing_address").val()+", "+$("#listing_zipcode").val()
       codeAddress(add);
     });
     
     $("#listing_city").focusout(function(){
-      add = $("#listing_address").val()+", "+$("#listing_zipcode").val()+$("#listing_city").val()
+      add = $("#listing_address").val()+", "+$("#listing_zipcode").val()+", "+$("#listing_city").val()
       codeAddress(add);
-    });
+    });*/
     
   });
   var geocoder;
@@ -38,7 +38,8 @@
 
   function codeAddress(city) {
     initialize();
-    var address = city+", Austria";
+    var address = city;
+    alert(city);
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
@@ -47,7 +48,7 @@
             position: results[0].geometry.location
         });
       } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        console.log('Geocode was not successful for the following reason: ' + status);
       }
     });
   }

@@ -119,11 +119,11 @@ ActiveRecord::Schema.define(:version => 20140126182815) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "reviews", :force => true do |t|
-    t.text     "review"
+    t.text     "description"
     t.integer  "user_id"
     t.integer  "listing_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "rating"
   end
 

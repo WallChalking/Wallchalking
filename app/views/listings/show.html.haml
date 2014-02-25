@@ -1,5 +1,12 @@
 %p#notice= notice
-
+.contact-landlord.pull-right
+  = simple_form_for :contact_landlord, :url => "/contact-landlord" do |f|
+    = f.input :name, :label => false, :placeholder => "Name"
+    = f.input :email, :label => false, :placeholder => "Email"
+    = f.input :phone, :label => false, :placeholder => "Phone Number"
+    = f.input :message, :label => false, :as => :text, :placeholder => "Type your message here..."
+    = f.submit "Contact"
+    / By sending, you agree to WallChalking's Terms of use and Privacy Policy
 %p
   %b Page Views
   = @listing.impressionist_count
@@ -53,3 +60,6 @@
 
     
 = render :partial => "reviews/form", :locals => {:listing_id => @listing.id}
+/
+  - @reviews.each do |review|
+    = render :partial => "reviews/review_item", :locals => {:review => review}
